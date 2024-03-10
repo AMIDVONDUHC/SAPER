@@ -1,0 +1,89 @@
+\documentclass[14pt, oneside]{altsu-report}
+
+\worktype{Отчёт по практике на тему:}
+\title{Название работы}
+\author{А.\,А.~Никто}
+\groupnumber{565}
+\GradebookNumber{1337}
+\supervisor{В.\,В.~Электроник}
+\supervisordegree{к.ф.-м.н., доцент}
+\ministry{Министерство науки и высшего образования}
+\country{Российской Федерации}
+\fulluniversityname{ФГБОУ ВО Алтайский государственный университет}
+\institute{Институт цифровых технологий, электроники и физики}
+\department{Кафедра вычислительной техники и электроники}
+\departmentchief{В.\,В.~Пашнев}
+\departmentchiefdegree{к.ф.-м.н., доцент}
+\shortdepartment{ВТиЭ}
+\abstractRU{Большой текст на русском! Пока счётчик работает не правильно! Поправьте количество рисунков и таблиц в cls-файле.}
+\abstractEN{Большой текст на английском!}
+\keysRU{компьютерное моделирование, cистема управления версиями}
+\keysEN{computer simulation, distributed version control}
+
+\date{\the\year}
+
+% Подключение файлов с библиотекой.
+\addbibresource{graduate-students.bib}
+
+% Пакет для отладки отступов.
+%\usepackage{showframe}
+
+\begin{document}
+\maketitle
+
+\setcounter{page}{2}
+\makeabstract
+\tableofcontents
+
+\chapter*{Введение}
+\phantomsection\addcontentsline{toc}{chapter}{ВВЕДЕНИЕ}
+
+\textbf{Актуальность}
+
+\textbf{Цель}
+
+\textbf{Задачи:}
+\begin{enumerate}
+\item Текст много текста.
+\item Текст много текста.
+\item Текст много текста.
+\end{enumerate}
+
+% Подключение первой главы (теория):
+\include{chapter-1-report-csae.tex}
+% Подключение второй главы (практическая часть):
+\include{chapter-2-report-csae.tex}
+% Подключение третий главы (практическая часть с тестированием:
+\include{chapter-3-report-csae.tex}
+
+\chapter*{Заключение}
+\phantomsection\addcontentsline{toc}{chapter}{ЗАКЛЮЧЕНИЕ}
+
+\begin{enumerate}
+\item Пример ссылки на электронный источник~\cite{wikiRUBitbucket,wikiRUIdSoftware,wikiRUGitHub}.
+\item Пример ссылки на книгу одного автора~\cite{book1author}.
+\item Пример ссылки на книгу 5-ти и более авторов~\cite{book5author}.
+\end{enumerate}
+
+\newpage
+\phantomsection\addcontentsline{toc}{chapter}{СПИСОК ИСПОЛЬЗОВАННОЙ ЛИТЕРАТУРЫ}
+\printbibliography[title={Список использованной литературы}]
+
+\appendix
+\newpage
+\chapter*{\raggedleft\label{appendix1}Приложение}
+\phantomsection\addcontentsline{toc}{chapter}{ПРИЛОЖЕНИЕ}
+%\section*{\centering\label{code:appendix}Текст программы}
+
+\begin{center}
+\label{code:appendix}Текст программы
+\end{center}
+
+\begin{code}
+\captionof*{listing}{\centering\label{code:pi-example}Пример программы вычисления числа $\pi$ на языке \textit{C} с использованием \textit{MPI} (пример из https://ru.wikipedia
+.org/wiki/Message\_Passing\_Interface)}
+\vspace{-1cm}\inputminted{C}{src/pi-mpi.c}
+\end{code}
+
+\end{document}
+
